@@ -118,3 +118,40 @@ footer { padding: 28px 0; background: var(--soft); }
   .profile { padding-top: 0; }
   section:not(.profile) { break-inside: avoid; }
 }
+.news-section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.news-section h2 {
+  margin-bottom: 1rem;
+}
+
+.news-link {
+  font-size: 0.65em;
+  font-weight: normal;
+}
+
+.news-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.news-list li {
+  margin-bottom: 0.65rem;
+  line-height: 1.6;
+}
+
+.news-date {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.news-section a {
+  color: #1a33cc;
+  text-decoration: none;
+}
+
+.news-section a:hover {
+  text-decoration: underline;
+}
