@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Selected human factors and automated driving research projects by Haitao (Book) Chen.">
-  <title>Research | Haitao (Book) Chen</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Selected human factors and automated driving research projects by Haitao (Book) Chen." name="description"/>
+<title>Research Portfolio | Haitao (Book) Chen</title>
+<link href="styles.css" rel="stylesheet"/>
+<style>
 /* Portfolio-specific layout, extending the homepage's styles.css. */
 .portfolio-intro{padding:3rem 0 1.2rem;border-bottom:1px solid #d9dee2}
 .portfolio-intro h1{font-size:2.1rem;margin:0 0 .35rem}
@@ -32,113 +33,120 @@
 .image-pending small{font-size:.7rem}
 @media(max-width:780px){.research-entry{grid-template-columns:1fr;gap:.85rem;padding:1.4rem 0}.research-image img,.image-pending{max-height:260px}.research-image img{object-position:center}.portfolio-intro{padding:1.7rem 0 .9rem}}
 
-  </style>
+  
+/* Publication-style abstract row: compact link/heading, with collapsible abstract text. */
+.research-copy .research-links{display:flex;align-items:baseline;gap:.4rem;flex-wrap:wrap;margin:.42rem 0 0;}
+.research-copy .abstract-details{display:contents;}
+.research-copy .abstract-details summary{cursor:pointer;color:#204b70;list-style:none;font-size:.94rem;}
+.research-copy .abstract-details summary::-webkit-details-marker{display:none;}
+.research-copy .abstract-details[open] .abstract-text{flex-basis:100%;width:100%;font-size:.93rem;line-height:1.6;color:inherit;margin:.65rem 0 .1rem;}
+.research-copy .abstract-details:not([open]) .abstract-text{display:none;}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="site-name" href="index.html#home">Haitao Chen</a>
-      <nav aria-label="Primary navigation">
-        <a href="index.html#about">About</a>
-        <a href="portfolio.html" aria-current="page">Research</a>
-        <a href="index.html#publications">Publications</a>
-        <a href="index.html#teaching">Teaching</a>
-        <a href="assets/Haitao_Book_Chen_CV.pdf">CV</a>
-      </nav>
-    </div>
-  </header>
-
+<header class="site-header">
+<div class="container header-inner">
+<a class="site-name" href="index.html#home">Haitao Chen</a>
+<nav aria-label="Primary navigation">
+<a href="index.html#about">About</a>
+<a aria-current="page" href="portfolio.html">Research Portfolio</a>
+<a href="index.html#publications">Publications</a>
+<a href="index.html#teaching">Teaching</a>
+<a href="assets/Haitao_Book_Chen_CV.pdf">CV</a>
+</nav>
+</div>
+</header>
 <main class="container">
-  <section class="portfolio-intro">
-    <h1>Research Interest</h1>
-    <p>Human–automated vehicle interaction · Driver behavior · Transportation safety</p>
-  </section>
-  <section class="research-list" aria-label="Research projects">
+<section class="portfolio-intro">
+<h1>Research Portfolio</h1>
+<p>Human–automated vehicle interaction · Driver behavior · Transportation safety</p>
+</section>
+<section aria-label="Research projects" class="research-list">
 <article class="research-entry" id="right-of-way">
-  <div class="research-image"><img loading="lazy" src="assets/intersection-curves.webp" alt="Proceeding probability curves for AV and HDV actors by arrival-time advantage"></div>
-  <div class="research-copy">
-    <h2>Right-of-Way Negotiation Between Automated and Human-Driven Vehicles at Stop-Controlled Intersections</h2>
-    <p class="authors"><strong>Haitao (Book) Chen</strong>, Zirui Wu, Xianbiao Hu, Yiqi Zhang</p>
-    <p class="venue">Research manuscript · 2026</p>
-    <p class="research-links"><a href="#right-of-way-more">Figure details</a></p>
-    <p class="research-description">How do automated and human-driven vehicles decide who proceeds first at stop signs? I extracted and analyzed <strong>2,873 interactions</strong> from Waymo Open and Lyft Level 5, and applied nested XGBoost models with SHAP to examine the associations between temporal priority, stopping behavior, and proceeding/yielding decisions.</p>
-    <p class="finding"><strong>Key finding:</strong> AV actors were generally more likely to yield, particularly when their arrival-time advantage was limited. Stopping differences persisted even as proceeding decisions converged.</p>
-    <p class="methods">Python · Trajectory analysis · XGBoost · SHAP</p>
-    <details id="right-of-way-more"><summary>More about this project</summary><p>Analyzed actor–follower pair types across crossing and merging interactions; examined differences between Waymo and Lyft AV negotiation behavior. Manuscript in preparation; the displayed figure is a working result.</p></details>
-  </div>
+<div class="research-image"><img alt="Proceeding probability curves for AV and HDV actors by arrival-time advantage" loading="lazy" src="assets/intersection-curves.webp"/></div>
+<div class="research-copy">
+<h2>Right-of-Way Negotiation Between Automated and Human-Driven Vehicles at Stop-Controlled Intersections</h2>
+<p class="authors"><strong>Haitao (Book) Chen</strong>, Zirui Wu, Xianbiao Hu, Yiqi Zhang</p>
+<p class="venue">Research manuscript · 2026</p><div class="research-links"><details class="abstract-details" open=""><summary>Abstract</summary><p class="abstract-text">This study examines tactical proceeding and yielding decisions at all-way stop-controlled intersections using 2,873 interaction records from the Waymo Open and Lyft Level 5 datasets. We compare vehicle-pair types, arrival-time priority, and stopping behavior, and use nested XGBoost feature sets with SHAP analyses to characterize their associations with actor decisions. AV actors generally yield more than human-driven actors, especially when arrival-time advantage is limited. As temporal advantage grows, proceeding probabilities converge, while differences in stopping behavior remain. Comparisons also reveal distinct negotiation patterns in the two datasets.</p></details></div>
+
+
+
+
+
+</div>
 </article>
 <article class="research-entry" id="v2v">
-  <div class="research-image"><img loading="lazy" src="assets/v2v-concept.webp" alt="Two pathways for reducing driver confusion through V2V communication and AV driving style"></div>
-  <div class="research-copy">
-    <h2>Mitigating Driver Confusion and Aggression Through V2V Communication</h2>
-    <p class="authors"><strong>Haitao (Book) Chen</strong>, Yiqi Zhang</p>
-    <p class="venue"><em>Accident Analysis &amp; Prevention</em>, 2026</p>
-    <p class="research-links"><a href="https://doi.org/10.1016/j.aap.2026.108676" target="_blank" rel="noopener noreferrer">Paper</a> <span class="slash">/</span> <a href="#v2v-more">Key results</a></p>
-    <p class="research-description">Can explicit communication of AV intentions make mixed-traffic interactions safer and easier to understand? I designed and analyzed a <strong>48-participant driving-simulator experiment</strong> that compared V2V-enabled and standard interactions under different AV and human driving styles.</p>
-    <p class="finding"><strong>Key finding:</strong> V2V cues improved decision alignment and reduced confusion and braking, while more assertive, rule-compliant AV behavior helped drivers interpret AV intent.</p>
-    <p class="methods">STISIM · V2V interface · Experimental design · Mixed-effects models</p>
-    <details id="v2v-more"><summary>More about this project</summary><p>The experiment combined visual and auditory V2V notifications with defensive and assertive AV driving strategies at stop-controlled intersections.</p></details>
-  </div>
+<div class="research-image"><img alt="Two pathways for reducing driver confusion through V2V communication and AV driving style" loading="lazy" src="assets/v2v-concept.webp"/></div>
+<div class="research-copy">
+<h2>Mitigating Driver Confusion and Aggression Through V2V Communication</h2>
+<p class="authors"><strong>Haitao (Book) Chen</strong>, Yiqi Zhang</p>
+<p class="venue"><em>Accident Analysis &amp; Prevention</em>, 2026</p><div class="research-links"><a href="https://doi.org/10.1016/j.aap.2026.108676" rel="noopener noreferrer" target="_blank">Paper</a><span class="slash">/</span><details class="abstract-details" open=""><summary>Abstract</summary><p class="abstract-text">Human-driven vehicle operators may misinterpret automated vehicles (AVs) whose defensive behavior differs from their expectations. This study examined whether vehicle-to-vehicle (V2V) communication and AV driving style affect driver confusion and aggressive responses. Forty-eight participants completed a driving-simulator experiment comparing V2V-on and V2V-off conditions while encountering defensive and assertive AVs. V2V communication improved the alignment of drivers' decisions with AV intentions and reduced reported confusion and braking frequency. More assertive, rule-compliant AV behavior was also associated with less confusion. The findings support communicating AV intentions and calibrating negotiation behavior to improve mixed-traffic interactions.</p></details></div>
+
+
+
+
+
+</div>
 </article>
 <article class="research-entry" id="driving-style">
-  <div class="research-image"><img loading="lazy" src="assets/driving-style.webp" alt="Decision-making chart comparing responses to defensive and assertive AV driving styles"></div>
-  <div class="research-copy">
-    <h2>How AV Driving Style Shapes Human Driver Aggression</h2>
-    <p class="authors"><strong>Haitao (Book) Chen</strong>, Yiqi Zhang</p>
-    <p class="venue"><em>Transportation Research Part F: Traffic Psychology and Behaviour</em>, 2026</p>
-    <p class="research-links"><a href="https://doi.org/10.1016/j.trf.2025.103431" target="_blank" rel="noopener noreferrer">Paper</a> <span class="slash">/</span> <a href="#driving-style-more">Key results</a></p>
-    <p class="research-description">Does an overly defensive AV provoke more aggressive behavior from surrounding drivers? I designed urban and highway driving scenarios for <strong>36 participants</strong> and analyzed driver decisions, time-to-collision, trust, and risk perception.</p>
-    <p class="finding"><strong>Key finding:</strong> More assertive, rule-compliant AV behavior was associated with fewer aggressive human-driver decisions and larger safety margins.</p>
-    <p class="methods">Driving simulation · Driver behavior · Logistic mixed models</p>
-    <details id="driving-style-more"><summary>More about this project</summary><p>Compared responses to two AV driving styles across urban intersection and highway negotiation scenarios, accounting for individual driving styles.</p></details>
-  </div>
+<div class="research-image"><img alt="Decision-making chart comparing responses to defensive and assertive AV driving styles" loading="lazy" src="assets/driving-style.webp"/></div>
+<div class="research-copy">
+<h2>How AV Driving Style Shapes Human Driver Aggression</h2>
+<p class="authors"><strong>Haitao (Book) Chen</strong>, Yiqi Zhang</p>
+<p class="venue"><em>Transportation Research Part F: Traffic Psychology and Behaviour</em>, 2026</p><div class="research-links"><a href="https://doi.org/10.1016/j.trf.2025.103431" rel="noopener noreferrer" target="_blank">Paper</a><span class="slash">/</span><details class="abstract-details" open=""><summary>Abstract</summary><p class="abstract-text">This driving-simulator study investigated how automated vehicle (AV) driving styles influence human drivers' tactical decisions, driving performance, trust, and risk perception in mixed traffic. Thirty-six participants interacted with defensive and more assertive AVs across urban and highway scenarios. Human drivers, particularly those with more aggressive driving styles, were less likely to make aggressive decisions when interacting with assertive AVs. They also maintained greater time-to-collision margins and generally reported higher trust than when interacting with defensive AVs. The results suggest that assertive yet rule-compliant AV behavior may help mitigate aggressive responses during human–AV interactions.</p></details></div>
+
+
+
+
+
+</div>
 </article>
 <article class="research-entry" id="penetration">
-  <div class="research-image"><img loading="lazy" src="assets/penetration-results.webp" alt="Graph of human driver decisions at different AV penetration rates"></div>
-  <div class="research-copy">
-    <h2>Behavioral Adaptation as Automated Vehicles Become More Common</h2>
-    <p class="authors"><strong>Haitao (Book) Chen</strong>, Zheng Ma, Yiqi Zhang</p>
-    <p class="venue"><em>Accident Analysis &amp; Prevention</em>, 2026</p>
-    <p class="research-links"><a href="https://doi.org/10.1016/j.aap.2026.108516" target="_blank" rel="noopener noreferrer">Paper</a> <span class="slash">/</span> <a href="#penetration-more">Key results</a></p>
-    <p class="research-description">How does the share of AVs in surrounding traffic change human driving decisions? I examined left-turn and lane-change responses in a <strong>36-participant simulator study</strong> at 0%, 25%, 50%, and 75% AV penetration.</p>
-    <p class="finding"><strong>Key finding:</strong> Aggressive drivers exhibited greater tactical behavioral adaptation at higher AV penetration, whereas defensive drivers showed relatively stable behavior.</p>
-    <p class="methods">Mixed-traffic simulation · Experimental design · Mixed-effects analysis</p>
-    <details id="penetration-more"><summary>More about this project</summary><p>Evaluated tactical choices and subjective outcomes across different AV penetration levels and human driving styles.</p></details>
-  </div>
+<div class="research-image"><img alt="Graph of human driver decisions at different AV penetration rates" loading="lazy" src="assets/penetration-results.webp"/></div>
+<div class="research-copy">
+<h2>Behavioral Adaptation as Automated Vehicles Become More Common</h2>
+<p class="authors"><strong>Haitao (Book) Chen</strong>, Zheng Ma, Yiqi Zhang</p>
+<p class="venue"><em>Accident Analysis &amp; Prevention</em>, 2026</p><div class="research-links"><a href="https://doi.org/10.1016/j.aap.2026.108516" rel="noopener noreferrer" target="_blank">Paper</a><span class="slash">/</span><details class="abstract-details" open=""><summary>Abstract</summary><p class="abstract-text">This study examined behavioral adaptation to increasing automated-vehicle (AV) penetration in mixed traffic, considering differences in human driving styles. Thirty-six drivers completed simulated left-turn and lane-change scenarios with AV penetration rates of 0%, 25%, 50%, and 75%. As penetration increased, aggressive drivers showed stronger changes in tactical decision-making; moderate drivers exhibited adaptation in lane-change behavior, while defensive drivers' decisions remained relatively stable. The findings indicate that the effects of AV deployment depend in part on how drivers adapt to the behavior of surrounding vehicles, with potential implications for mixed-traffic safety.</p></details></div>
+
+
+
+
+
+</div>
 </article>
 <article class="research-entry" id="takeover">
-  <div class="research-image"><div class="image-pending"><span>Figure coming soon</span><small>Original research image to be added</small></div></div>
-  <div class="research-copy">
-    <h2>Driver-Initiated Takeover Under Aggression in Mixed Traffic</h2>
-    <p class="authors"><strong>Haitao (Book) Chen</strong>, Yiqi Zhang</p>
-    <p class="venue">HFES ASPIRE Conference · 2026</p>
-    <p class="research-links"><a href="#takeover-more">Project details</a></p>
-    <p class="research-description">When do drivers override automation in response to aggressive surrounding traffic? I designed simulated tailgating, honking, and abrupt-braking encounters and examined intervention decisions and subsequent manual driving behavior.</p>
-    <p class="finding"><strong>Key finding:</strong> Higher-intensity aggression increased the likelihood of driver-initiated takeover; manual control after takeover differed from automated driving.</p>
-    <p class="methods">Driving simulation · Takeover · Logistic mixed-effects modeling</p>
-    <details id="takeover-more"><summary>More about this project</summary><p>A representative scenario or original takeover-results figure can be added when approved for public release.</p></details>
-  </div>
+<div class="research-image"><div class="image-pending"><span>Figure coming soon</span><small>Original research image to be added</small></div></div>
+<div class="research-copy">
+<h2>Driver-Initiated Takeover Under Aggression in Mixed Traffic</h2>
+<p class="authors"><strong>Haitao (Book) Chen</strong>, Yiqi Zhang</p>
+<p class="venue">HFES ASPIRE Conference · 2026</p><div class="research-links"><details class="abstract-details" open=""><summary>Abstract</summary><p class="abstract-text">This project investigates when drivers voluntarily override automated driving in response to aggression from surrounding human-driven vehicles. Driving-simulator scenarios included honking, tailgating, and abrupt braking at different aggression levels. The analysis examines how event type and intensity relate to takeover likelihood and compares vehicle-control behavior after takeover with automated driving. Higher aggression intensity was associated with greater takeover likelihood, while post-takeover acceleration and lateral-control patterns differed from those observed under automation. These findings inform the evaluation of driver trust, intervention behavior, and safe control transitions in mixed traffic.</p></details></div>
+
+
+
+
+
+</div>
 </article>
 <article class="research-entry" id="arhud">
-  <div class="research-image"><div class="image-pending"><span>Figure coming soon</span><small>Original research image to be added</small></div></div>
-  <div class="research-copy">
-    <h2>Augmented Reality HUDs for Situation Awareness Under Adversarial Attacks</h2>
-    <p class="authors"><strong>Haitao (Book) Chen</strong>, Jiazheng Gao, Aiping Xiong, Yiqi Zhang</p>
-    <p class="venue">HFES ASPIRE Conference · 2026</p>
-    <p class="research-links"><a href="#arhud-more">Project details</a></p>
-    <p class="research-description">Can augmented reality head-up displays help drivers understand hazards when Level 3 automation is disrupted? I evaluated <strong>eight AR-HUD configurations</strong> in a driving-simulator study using situation-awareness measures.</p>
-    <p class="finding"><strong>Key finding:</strong> Different information cues supported different levels of situation awareness, informing the design of driver-facing automation interfaces.</p>
-    <p class="methods">AR-HUD · SAGAT · STISIM · Human–machine interfaces</p>
-    <details id="arhud-more"><summary>More about this project</summary><p>Original screenshots from the eight tested interfaces can replace the current reserved figure area.</p></details>
-  </div>
+<div class="research-image"><div class="image-pending"><span>Figure coming soon</span><small>Original research image to be added</small></div></div>
+<div class="research-copy">
+<h2>Augmented Reality HUDs for Situation Awareness Under Adversarial Attacks</h2>
+<p class="authors"><strong>Haitao (Book) Chen</strong>, Jiazheng Gao, Aiping Xiong, Yiqi Zhang</p>
+<p class="venue">HFES ASPIRE Conference · 2026</p><div class="research-links"><details class="abstract-details" open=""><summary>Abstract</summary><p class="abstract-text">This project evaluates augmented-reality head-up display (AR-HUD) designs intended to support driver situation awareness during Level 3 automated driving under adversarial roadway disturbances. Eight interface conditions were compared in a driving-simulator experiment using situation-awareness measures. The results suggest that different visual cues support different levels of situation awareness, with some cues helping drivers recognize the current situation and others supporting anticipation of future roadway events. The study provides evidence for designing context-sensitive driver-facing interfaces for automation failures and unexpected hazards.</p></details></div>
+
+
+
+
+
+</div>
 </article>
-  </section>
+</section>
 </main>
-  <footer>
-    <div class="container footer-inner">
-      <span>© 2026 Book (Haitao) Chen</span>
-      <span><a href="mailto:hbc5417@psu.edu">hbc5417@psu.edu</a> · <a href="https://github.com/HaitaoChen-star">GitHub</a></span>
-    </div>
-  </footer>
+<footer>
+<div class="container footer-inner">
+<span>© 2026 Book (Haitao) Chen</span>
+<span><a href="mailto:hbc5417@psu.edu">hbc5417@psu.edu</a> · <a href="https://github.com/HaitaoChen-star">GitHub</a></span>
+</div>
+</footer>
 </body>
 </html>
